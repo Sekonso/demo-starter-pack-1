@@ -1,0 +1,15 @@
+---
+import GlobalLayout from "./GlobalLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<GlobalLayout>
+    <Header />
+
+    <main>
+        <slot />
+    </main>
+    
+    <Footer />
+</GlobalLayout>

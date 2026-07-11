@@ -1,5 +1,25 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite';
+import react from '@astrojs/react';
+import icon from "astro-icon";
 
 // https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  vite: {
+    plugins: [tailwindcss()]
+  },
+  integrations: [react(), icon()],
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: "Molle",
+      cssVariable: "--font-display",
+    },
+    {
+      provider: fontProviders.google(),
+      name: "Poppins",
+      cssVariable: "--font-body",
+    }
+  ]
+});
