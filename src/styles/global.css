@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
-:root {
+@theme {
+    /* Typography */
+    --font-display: var(--font-display);
+    --font-normal: var(--font-normal);
+
     /* Colors */
     --color-background: #fdf7ef;
     --color-foreground: #1E1E1E;
@@ -12,11 +16,7 @@
     --color-brand: #D97706;
     --color-brand-secondary: #6F4E37;
 
-    /* Typography */
-    --font-display: "Molle", "Segoe UI", sans-serif;
-    --font-body: "Poppins", "Segoe UI", sans-serif;
-
-    /* Layouts */
+    /* Breakpoints */
     --breakpoint-mobile: 640px;
     --breakpoint-tablet: 768px;
     --breakpoint-desktop: 1024px;
@@ -26,7 +26,7 @@
 html {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: var(--font-body);
+    font-family: var(--font-normal);
 }
 
 body {
@@ -34,27 +34,4 @@ body {
     margin: 0;
     background-color: var(--color-background);
     color: var(--color-text);
-}
-
-
-@theme {
-    /* Colors */
-    --color-background: var(--color-background);
-    --color-foreground: var(--color-foreground);
-
-    --color-background-secondary: var(--color-background-secondary);
-    --color-foreground-secondary: var(--color-foreground-secondary);
-    --color-surface-secondary: var(--color-surface-secondary);
-
-    --color-brand: var(--color-brand);
-    --color-brand-secondary: var(--color-brand-secondary);
-
-    /* Fonts */
-    --font-display: var(--font-display);
-    --font-body: var(--font-body);
-
-    --breakpoint-mobile: var(--breakpoints-mobile);
-    --breakpoint-tablet: var(--breakpoints-tablet);
-    --breakpoint-desktop: var(--breakpoints-desktop);
-    --breakpoint-wide: var(--breakpoints-wide);
 }

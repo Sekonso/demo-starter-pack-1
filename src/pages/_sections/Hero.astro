@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import Container from "@/components/utils/Container.astro";
+import heroImg from "@/assets/images/hero.webp";
+---
+
+<div class="relative">
+  <!-- Background image -->
+  <Image
+    src={heroImg}
+    alt="Something"
+    class="absolute inset-0 size-full object-cover"
+  />
+
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- Content -->
+  <Container
+    class="text-foreground-secondary relative flex h-150 items-end py-12"
+  >
+    <div class="w-full">
+      <div
+        class="tablet:gap-8 flex flex-row flex-wrap items-center justify-between gap-4"
+      >
+        <h1 class="font-display text-5xl font-bold">KOPIPY.</h1>
+        <button class="bg-brand rounded-sm px-6 pt-1 pb-2 tablet:pt-2 tablet:pb-3 font-semibold">
+          Selengkapnya
+        </button>
+      </div>
+
+      <div class="bg-background mt-4 mb-6 h-1 w-full"></div>
+
+      <div>
+        <p class="max-w-xl">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea magnam
+          voluptatem recusandae incidunt qui eum, sit perferendis accusantium,
+          ullam dolorem est, modi vero quidem quis!
+        </p>
+      </div>
+    </div>
+  </Container>
+</div>

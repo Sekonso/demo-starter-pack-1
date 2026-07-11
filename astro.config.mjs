@@ -12,14 +12,14 @@ export default defineConfig({
   integrations: [react(), icon()],
   fonts: [
     {
-      provider: fontProviders.google(),
+      provider: fontProviders.fontsource(),
       name: "Molle",
-      cssVariable: "--font-display",
+      cssVariable: "--font-display"
     },
     {
-      provider: fontProviders.google(),
+      provider: fontProviders.fontsource(),
       name: "Poppins",
-      cssVariable: "--font-body",
+      cssVariable: "--font-normal"
     }
-  ]
+  ],
 });
