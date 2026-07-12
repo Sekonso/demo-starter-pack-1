@@ -8,6 +8,7 @@
     /* Colors */
     --color-background: #fdf7ef;
     --color-foreground: #1E1E1E;
+    --color-foreground-muted: #3A3A3A;
 
     --color-background-secondary: #1E1E1E;
     --color-foreground-secondary: #FDFBF8;
@@ -15,6 +16,8 @@
 
     --color-brand: #D97706;
     --color-brand-secondary: #6F4E37;
+
+    --color-danger: #EF4444;
 
     /* Breakpoints */
     --breakpoint-mobile: 640px;

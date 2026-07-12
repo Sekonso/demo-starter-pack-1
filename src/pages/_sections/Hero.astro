@@ -8,23 +8,28 @@ import heroImg from "@/assets/images/hero.webp";
   <!-- Background image -->
   <Image
     src={heroImg}
-    alt="Something"
-    class="absolute inset-0 size-full object-cover"
+    alt="Image of barista brewing a coffee"
+    class="absolute inset-0 z-10 size-full object-cover"
   />
 
   <!-- Dark overlay -->
-  <div class="absolute inset-0 bg-black/50"></div>
+  <div
+    class="absolute inset-0 z-10 bg-black/60 shadow-[inset_0_0_400px_rgba(0,0,0,0.9)]"
+  >
+  </div>
 
   <!-- Content -->
   <Container
-    class="text-foreground-secondary relative flex h-150 items-end py-12"
+    class="text-foreground-secondary relative z-20 flex h-150 items-end py-12"
   >
     <div class="w-full">
       <div
         class="tablet:gap-8 flex flex-row flex-wrap items-center justify-between gap-4"
       >
         <h1 class="font-display text-5xl font-bold">KOPIPY.</h1>
-        <button class="bg-brand rounded-sm px-6 pt-1 pb-2 tablet:pt-2 tablet:pb-3 font-semibold">
+        <button
+          class="bg-brand tablet:pt-2 tablet:pb-3 rounded-sm px-6 pt-1 pb-2 font-semibold"
+        >
           Selengkapnya
         </button>
       </div>

@@ -1,1 +1,29 @@
-<header>This is header</header>
+---
+import Container from "@/components/utils/Container.astro";
+import Navbar from "@/components/Navbar.tsx";
+---
+
+<header
+  id="app-header"
+  class="text-foreground-secondary transition-bg fixed top-0 left-0 z-999 w-full bg-transparent duration-300"
+>
+  <Container class="py-4 tablet:py-6">
+    <Navbar client:load />
+  </Container>
+</header>
+
+<script>
+  const header = document.getElementById("app-header");
+
+  if (header) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        header.classList.remove("bg-transparent");
+        header.classList.add("bg-background-secondary", "shadow-md");
+      } else {
+        header.classList.remove("bg-background-secondary", "shadow-md");
+        header.classList.add("bg-transparent");
+      }
+    });
+  }
+</script>
