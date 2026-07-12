@@ -1,0 +1,86 @@
+---
+import Container from "@/components/utils/Container.astro";
+
+const galleries = [
+  {
+    about: "barista making latte art",
+    img: "images/gallery/barista-making-latte-art.webp",
+    colspan: "col-span-1",
+  },
+  {
+    about: "cafe's neon exterior",
+    img: "images/gallery/cafe-neon-exterior.webp",
+    colspan: "col-span-1",
+  },
+  {
+    about: "girl drinking coffee",
+    img: "images/gallery/girl_drinking_coffee.webp",
+    colspan: "col-span-2",
+  },
+  {
+    about: "enjoying cafe menu",
+    img: "images/gallery/enjoying-cafe-menu.webp",
+    colspan: "col-span-1",
+  },
+  {
+    about: "couple holding hands",
+    img: "images/gallery/couple-holding-hands.webp",
+    colspan: "col-span-2",
+  },
+  {
+    about: "girl enjoying coffee",
+    img: "images/gallery/girl-enjoying-coffee.webp",
+    colspan: "col-span-1",
+  },
+  {
+    about: "scrolling in cafe",
+    img: "images/gallery/scrolling-in-cafe.webp",
+    colspan: "col-span-2",
+  },
+  {
+    about: "working in cafe",
+    img: "images/gallery/working-in-cafe.webp",
+    colspan: "col-span-1",
+  },
+  {
+    about: "friends hanging out",
+    img: "images/gallery/friends-hanging-out.webp",
+    colspan: "col-span-1",
+  },
+];
+---
+
+<div id="gallery">
+  <Container class="py-12">
+    <!-- Head -->
+    <div>
+      <h2 class="text-center text-5xl font-bold">Gallery</h2>
+    </div>
+
+    <div class="my-12"></div>
+
+    <!-- Grid -->
+    <div
+      class="tablet:h-150 text-foreground-secondary grid h-80 w-full grid-cols-4 grid-rows-3 gap-4"
+    >
+      {
+        galleries.map((item) => {
+          return (
+            <div
+              class:list={[
+                "bg-background-secondary overflow-hidden rounded-sm",
+                item.colspan,
+              ]}
+            >
+              <img
+                src={item.img}
+                alt={item.about}
+                class="size-full object-cover object-center"
+              />
+            </div>
+          );
+        })
+      }
+    </div>
+  </Container>
+</div>
