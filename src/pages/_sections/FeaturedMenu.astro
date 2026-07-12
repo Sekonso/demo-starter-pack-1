@@ -1,0 +1,57 @@
+---
+import Container from "@/components/utils/Container.astro";
+
+const featuredItems = [
+  {
+    name: "Caramel Ice Latte",
+    img: "images/caramel-ice-coffee.webp",
+    cost: 25,
+  },
+  {
+    name: "Iced Americano",
+    img: "images/iced-americano.webp",
+    cost: 20,
+  },
+  {
+    name: "Mocca Coffee",
+    img: "images/mocca-coffee.webp",
+    cost: 30,
+  },
+];
+---
+
+<div
+  id="featured menu"
+  class="bg-background-secondary text-foreground-secondary"
+>
+  <Container class="flex flex-col gap-20 py-12">
+    <!-- Head -->
+    <div>
+      <h2 class="font-display text-center text-5xl">Featured Menu</h2>
+    </div>
+
+    <!-- Featured menu -->
+    <ul
+      class="tablet:grid-rows-1 tablet:grid-cols-3 grid grid-cols-1 grid-rows-3 gap-12"
+    >
+      {
+        featuredItems.map((item) => {
+          return (
+            <li class="flex flex-col items-center gap-4">
+              <div class="relative">
+                <div class="bg-brand text-foreground-secondary absolute top-4 right-0 flex size-10 items-center justify-center p-8 font-semibold [clip-path:polygon(50%_0%,54%_15%,64%_4%,64%_20%,76%_11%,73%_27%,86%_21%,79%_35%,92%_32%,82%_44%,96%_44%,84%_53%,97%_58%,84%_62%,92%_71%,79%_70%,83%_82%,72%_76%,73%_89%,64%_79%,60%_92%,54%_80%,50%_96%,46%_80%,40%_92%,36%_79%,27%_89%,28%_76%,17%_82%,21%_70%,8%_71%,16%_62%,3%_58%,16%_53%,4%_44%,18%_44%,8%_32%,21%_35%,14%_21%,27%_27%,24%_11%,36%_20%,36%_4%,46%_15%)]">
+                  {item.cost}k
+                </div>
+                <img src={item.img} alt={item.name} class="h-50" />
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="mx-auto mt-4 mb-3 h-0.5 w-40 bg-white" />
+                <span class="text-center text-3xl">{item.name}</span>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </Container>
+</div>
