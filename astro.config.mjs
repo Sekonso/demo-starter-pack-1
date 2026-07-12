@@ -19,7 +19,8 @@ export default defineConfig({
     {
       provider: fontProviders.fontsource(),
       name: "Poppins",
-      cssVariable: "--font-normal"
+      cssVariable: "--font-normal",
+      weights: [100, 200, 300, 400, 500, 600, 700, 800, 900]
     }
   ],
 });

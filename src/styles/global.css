@@ -25,16 +25,3 @@
     --breakpoint-desktop: 1024px;
     --breakpoint-wide: 1280px;
 }
-
-html {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    font-family: var(--font-normal);
-}
-
-body {
-    padding: 0;
-    margin: 0;
-    background-color: var(--color-background);
-    color: var(--color-text);
-}
