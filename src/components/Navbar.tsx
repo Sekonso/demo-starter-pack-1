@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
+import WhatsappFill from "@iconify-react/ri/whatsapp-fill";
+import HamburgerMenuIcon from "@iconify-react/mdi/hamburger-menu";
+import CloseIcon from "@iconify-react/mdi/close";
 
 const navItems = [
   { name: "About Us", href: "#about" },
@@ -20,7 +23,12 @@ export default function Navbar() {
     <nav className="flex items-center justify-between">
       {/* brand */}
       <div className="flex flex-row items-center gap-2">
-        <img src="/favicon.ico" className="size-8" alt="Company logo" />
+        <img
+          src="/favicon.ico"
+          loading="eager"
+          className="size-8"
+          alt="Company logo"
+        />
         <span className="text-xl font-bold">KOPIPY</span>
       </div>
 
@@ -48,15 +56,16 @@ export default function Navbar() {
         target="_blank"
         className="tablet:block hover:text-brand hidden transition-all hover:scale-110"
       >
-        <Icon icon="ri:whatsapp-fill" width={32} height={32} />
+        <WhatsappFill width="32" height="32" />
       </a>
 
       {/* Nav panel activate button */}
       <button
         className="tablet:hidden cursor-pointer"
         onClick={() => setPanel(true)}
+        aria-label="Display mobile navigation panel"
       >
-        <Icon icon="mdi:hamburger-menu" width={24} height={24} />
+        <HamburgerMenuIcon width="24" height="24" />
       </button>
 
       {/* Nav panel */}
@@ -71,8 +80,9 @@ export default function Navbar() {
           <button
             className="bg-danger hover:bg-background hover:text-danger hover:border-danger text-foreground-secondary cursor-pointer rounded-sm border border-transparent px-4 py-2 transition-all"
             onClick={() => setPanel(false)}
+            aria-label="Close mobile navigation panel"
           >
-            <Icon icon="mdi:close" width={24} height={24} />
+            <CloseIcon width="24" height="24" />
           </button>
         </div>
 
@@ -109,7 +119,7 @@ export default function Navbar() {
             className="bg-background-secondary text-foreground-secondary hover:bg-background hover:text-foreground hover:border-foreground flex flex-row items-center gap-4 rounded-sm border border-transparent px-5 py-2 transition-all"
           >
             Hubungi Kami
-            <Icon icon="ri:whatsapp-fill" width={24} height={24} />
+            <WhatsappFill width="32" height="32" />
           </a>
         </div>
       </div>
