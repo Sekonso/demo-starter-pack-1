@@ -8,8 +8,12 @@ import heroImg from "@/assets/images/hero.webp";
   <!-- Background image -->
   <Image
     src={heroImg}
-    alt="barista brewing a coffee"
-    class="absolute inset-0 z-10 size-full object-cover"
+    alt="Barista brewing a coffee"
+    aria-hidden="true"
+    widths={[640, 768, 1024]}
+    loading="eager"
+    fetchpriority="high"
+    class="absolute inset-0 -z-10 h-full w-full object-cover"
   />
 
   <!-- Dark overlay -->
@@ -22,7 +26,7 @@ import heroImg from "@/assets/images/hero.webp";
   <Container
     class="text-foreground-secondary relative z-20 flex h-150 items-end py-12"
   >
-    <div data-aos="fade-up" class="w-full">
+    <div data-reveal="up" class="w-full">
       <div
         class="tablet:gap-8 flex flex-row flex-wrap items-center justify-between gap-4"
       >
@@ -31,17 +35,17 @@ import heroImg from "@/assets/images/hero.webp";
           href="#about"
           class="bg-brand tablet:pt-2 tablet:pb-3 rounded-sm px-6 pt-1 pb-2 font-semibold transition-all hover:scale-110 hover:cursor-pointer"
         >
-          Selengkapnya
+          Learn More
         </a>
       </div>
 
       <div class="bg-background mt-4 mb-6 h-1 w-full"></div>
 
       <div>
-        <p class="max-w-xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea magnam
-          voluptatem recusandae incidunt qui eum, sit perferendis accusantium,
-          ullam dolorem est, modi vero quidem quis!
+        <p class="max-w-2xl">
+          Warm the soul and calm the mind. Kopipy is here to be part of your
+          story, accompanying every journey, every conversation, and every
+          meaningful moment with each sip.
         </p>
       </div>
     </div>
