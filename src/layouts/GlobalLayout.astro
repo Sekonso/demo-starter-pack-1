@@ -1,6 +1,7 @@
 ---
 import "@/styles/global.css";
 import { Font } from "astro:assets";
+import "aos/dist/aos.css";
 ---
 
 <!doctype html>
@@ -12,13 +13,21 @@ import { Font } from "astro:assets";
     <Font cssVariable="--font-display" />
     <Font cssVariable="--font-normal" />
 
-    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" /> -->
+    <link rel="icon" href="favicon.ico" />
 
-    <title>My Page</title>
+    <title>Kopipy</title>
   </head>
 
   <body class="bg-background text-foreground m-0 p-0 font-normal">
     <slot />
+
+    <script>
+      import AOS from "aos";
+      AOS.init({
+        duration: 700,
+        once: true,
+        offset: 100,
+      });
+    </script>
   </body>
 </html>

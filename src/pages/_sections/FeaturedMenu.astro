@@ -20,18 +20,16 @@ const featuredItems = [
 ];
 ---
 
-<div
-  id="featured menu"
-  class="bg-background-secondary text-foreground-secondary"
->
+<div id="featured" class="bg-background-secondary text-foreground-secondary">
   <Container class="flex flex-col gap-20 py-20">
     <!-- Head -->
-    <div>
+    <div data-aos="fade-up">
       <h2 class="font-display text-center text-5xl">Featured Menu</h2>
     </div>
 
     <!-- Featured menu -->
     <ul
+      data-aos="fade-up"
       class="tablet:grid-rows-1 tablet:grid-cols-3 grid grid-cols-1 grid-rows-3 gap-12"
     >
       {

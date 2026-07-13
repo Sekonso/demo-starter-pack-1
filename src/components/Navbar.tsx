@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Icon } from "@iconify/react";
 
 const navItems = [
-  { name: "About Us", href: "#" },
-  { name: "Profile", href: "#" },
-  { name: "Gallery", href: "#" },
-  { name: "Reviews", href: "#" },
-  { name: "Location", href: "#" },
+  { name: "About Us", href: "#about" },
+  { name: "Featured", href: "#featured" },
+  { name: "Gallery", href: "#gallery" },
+  { name: "Reviews", href: "#reviews" },
+  { name: "Location", href: "#location" },
 ];
 
 export default function Navbar() {
@@ -30,7 +30,12 @@ export default function Navbar() {
           {navItems.map((item, idx) => {
             return (
               <li key={idx}>
-                <a href={item.href}>{item.name}</a>
+                <a
+                  href={item.href}
+                  className="hover:text-brand hover:border-brand border-b border-transparent transition-all"
+                >
+                  {item.name}
+                </a>
               </li>
             );
           })}
@@ -38,8 +43,12 @@ export default function Navbar() {
       </div>
 
       {/* Whatsapp CTA */}
-      <a href="#" className="tablet:block hidden">
-        <Icon icon="ri:whatsapp-fill" width={24} height={24} />
+      <a
+        href="https://api.whatsapp.com/send?phone=6285178519376"
+        target="_blank"
+        className="tablet:block hover:text-brand hidden transition-all hover:scale-110"
+      >
+        <Icon icon="ri:whatsapp-fill" width={32} height={32} />
       </a>
 
       {/* Nav panel activate button */}
@@ -53,14 +62,14 @@ export default function Navbar() {
       {/* Nav panel */}
       <div
         className={[
-          "bg-background text-foreground fixed top-0 h-screen w-75 p-4",
-          isPanelActive ? "right-0" : "right-full",
+          "bg-background text-foreground fixed top-0 h-screen w-75 p-4 transition-all duration-500",
+          isPanelActive ? "right-0" : "-right-full",
         ].join(" ")}
       >
         {/* Nav panel close button */}
         <div className="flex w-full flex-row justify-end">
           <button
-            className="bg-danger text-foreground-secondary cursor-pointer rounded-sm px-4 py-2"
+            className="bg-danger hover:bg-background hover:text-danger hover:border-danger text-foreground-secondary cursor-pointer rounded-sm border border-transparent px-4 py-2 transition-all"
             onClick={() => setPanel(false)}
           >
             <Icon icon="mdi:close" width={24} height={24} />
@@ -77,7 +86,7 @@ export default function Navbar() {
                 <a
                   href={item.href}
                   className={[
-                    "block",
+                    "hover:text-brand block",
                     idx < navItems.length - 1
                       ? "border-foreground-muted border-b-2 pb-4"
                       : "",
@@ -94,10 +103,14 @@ export default function Navbar() {
 
         {/* Whatsapp CTA */}
         <div className="flex w-full flex-row justify-end">
-          <button className="bg-background-secondary text-foreground-secondary flex flex-row items-center gap-4 rounded-sm px-4 py-2">
+          <a
+            href="https://api.whatsapp.com/send?phone=6285178519376"
+            target="blank"
+            className="bg-background-secondary text-foreground-secondary hover:bg-background hover:text-foreground hover:border-foreground flex flex-row items-center gap-4 rounded-sm border border-transparent px-5 py-2 transition-all"
+          >
             Hubungi Kami
             <Icon icon="ri:whatsapp-fill" width={24} height={24} />
-          </button>
+          </a>
         </div>
       </div>
     </nav>
