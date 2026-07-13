@@ -1,41 +1,88 @@
-# Astro blank starter kit
+# Starter pack product demo
 
-An Astro blank project starter kit.
+Demo page of starter pack product
 
-## Prerequisites
+A simple Astro-based landing page for a coffee shop or café.
 
-- Node.js 22.12.0 or newer
-- npm (comes with Node.js)
+## Features
 
-## Install
+- Astro with Tailwind CSS
+- Responsive layout for desktop and mobile
+- Hero section with background image and overlay
+- Sections for about, featured menu, gallery, and reviews
+- Reusable layout and container components
 
-1. Open a terminal in the project root.
-2. Run:
+## Requirements
 
-```bash
-npm install
+- Node.js 22.12 or newer
+- npm
+
+## Installation
+
+1. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+3. Open the local preview in your browser:
+   ```text
+   http://localhost:4321
+   ```
+
+## Project Scripts
+
+- `npm run dev` — start the local development server
+- `npm run build` — create a production build
+- `npm run preview` — preview the production build locally
+
+## Project Structure
+
+```text
+src/
+  components/
+    *all components here
+  layouts/
+    *all layouts here
+  pages/
+    index.astro
+    _sections/
+      * all section of single landing page here
+  styles/
+    global.css
+  assets/
+    images/
 ```
 
-## Run locally
+## How to Customize the Site
 
-```bash
-npm run dev
-```
+### 1. Change colors and theme
 
-Then open the local URL shown in the terminal.
+The main theme colors are defined in `src/styles/global.css`.
 
-## Build
+You can edit values such as:
 
-```bash
-npm run build
-```
+- `--color-background`
+- `--color-foreground`
+- `--color-brand`
+- `--color-brand-secondary`
+- `--color-background-secondary`
 
-## Preview production build
+### 2. Change fonts
 
-```bash
-npm run preview
-```
+Fonts are configured in `astro.config.mjs`.
 
-## Notes
+You can switch the display font and body font by updating the `fonts` section there.
 
-- The project uses Astro with React support and Tailwind CSS.
+### 3. Update navigation links
+
+The top navigation and footer navigation are defined in the relevant components:
+
+- `src/components/Navbar.tsx`
+- `src/components/Footer.astro`

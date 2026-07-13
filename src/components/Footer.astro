@@ -8,9 +8,10 @@ import footerImg from "@/assets/images/footer.webp";
   class="bg-background-secondary text-foreground-secondary relative pt-12 pb-4"
 >
   <!-- Background image -->
-  <Image
-    src={footerImg}
+  <img
+    src={footerImg.src}
     alt="cafe from outside"
+    loading="lazy"
     class="absolute inset-0 z-10 size-full object-cover"
   />
 
@@ -43,6 +44,7 @@ import footerImg from "@/assets/images/footer.webp";
         </h4>
         <div class="overflow-hidden rounded-sm">
           <iframe
+            title="Cafe location on the google map (placeholder or fake location)"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.6277957629377!2d12.765690845494943!3d46.831330092665745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47775df348db3f57%3A0x4a88b8a4964d6891!2sMocafe!5e0!3m2!1sen!2sid!4v1783940371800!5m2!1sen!2sid"
             allowfullscreen
             loading="lazy"
@@ -110,7 +112,9 @@ import footerImg from "@/assets/images/footer.webp";
     <div
       class="border-foreground-secondary text-foreground-muted-secondary border-t pt-6 text-sm"
     >
-      <p class="text-center">© This page is just a demo.</p>
+      <p class="text-center">
+        © This page is a demo. Every informations and assets are placeholders
+      </p>
     </div>
   </Container>
 </footer>

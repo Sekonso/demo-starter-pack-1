@@ -6,26 +6,35 @@ import Container from "@/components/utils/Container.astro";
   <Container
     class="tablet:flex-row tablet:gap-8 tablet:items-center tablet:justify-center flex flex-col pt-8 pb-12"
   >
-    <div data-aos="fade-right">
+    <!-- Image -->
+    <div data-reveal="left">
       <img
         src="images/latte.webp"
         alt="latte coffee"
+        loading="eager"
         class="tablet:w-80 w-60"
       />
     </div>
-    <div data-aos="fade-left" class="text-foreground">
+
+    <!-- Content -->
+    <div data-reveal="right" class="text-foreground">
       <h2 class="text-brand-secondary text-5xl font-bold font-normal">
         About Us
       </h2>
       <div class="bg-brand-secondary mt-2 mb-4 h-2 w-40"></div>
-      <p class="max-w-150 text-justify">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae sequi ex
-        autem dolore reiciendis natus, quas ea, delectus ratione magnam
-        perferendis omnis tempore quod corrupti temporibus iure. Laborum dolore
-        doloremque, sunt repellendus itaque reiciendis fugit, labore at magnam
-        aperiam, eligendi perspiciatis atque enim esse? Iusto temporibus cum
-        aperiam odit? Iste.
-      </p>
+      <div>
+        <p class="max-w-2xl leading-8">
+          At Kopipy, we believe every great conversation begins with a great cup
+          of coffee. Using carefully selected beans and handcrafted recipes, we
+          serve drinks that bring warmth, comfort, and unforgettable flavor.
+        </p>
+
+        <p class="mt-4 max-w-2xl leading-8">
+          More than a coffee shop, Kopipy is a place to connect, create, and
+          unwind. Whether you're meeting friends, getting work done, or enjoying
+          a quiet moment, we're here to make every visit feel like home.
+        </p>
+      </div>
     </div>
   </Container>
 </div>
