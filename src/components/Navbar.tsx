@@ -19,8 +19,9 @@ export default function Navbar() {
   return (
     <nav className="flex items-center justify-between">
       {/* brand */}
-      <div>
-        <img src="/favicon.ico" alt="Logo" />
+      <div className="flex flex-row items-center gap-2">
+        <img src="/favicon.ico" className="size-8" alt="Company logo" />
+        <span className="text-xl font-bold">KOPIPY</span>
       </div>
 
       {/* menu */}

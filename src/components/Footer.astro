@@ -1,1 +1,116 @@
-<footer>This is footer</footer>
+---
+import { Image } from "astro:assets";
+import Container from "@/components/utils/Container.astro";
+import footerImg from "@/assets/images/footer.webp";
+---
+
+<footer
+  class="bg-background-secondary text-foreground-secondary relative pt-12 pb-4"
+>
+  <!-- Background image -->
+  <Image
+    src={footerImg}
+    alt="cafe from outside"
+    class="absolute inset-0 z-10 size-full object-cover"
+  />
+
+  <!-- Dark overlay -->
+  <div
+    class="absolute inset-0 z-10 bg-black/60 shadow-[inset_0_0_400px_rgba(0,0,0,0.9)]"
+  >
+  </div>
+
+  <Container class="relative z-20 flex flex-col gap-8">
+    <div class="tablet:grid-cols-2 desktop:grid-cols-4 grid gap-8">
+      <!-- Brand -->
+      <div class="">
+        <div class="flex flex-row items-center gap-2">
+          <img src="/favicon.ico" class="size-8" alt="Company logo" />
+          <h3 class="font-display text-brand text-2xl font-semibold">Kopipy</h3>
+        </div>
+        <p
+          class="text-foreground-muted-secondary mt-3 max-w-sm text-sm leading-6"
+        >
+          A warm neighborhood café serving handcrafted coffee, fresh pastries,
+          and memorable moments.
+        </p>
+      </div>
+
+      <!-- Location -->
+      <div class="flex flex-col gap-4">
+        <h4 class="text-foreground-secondary text-sm font-semibold uppercase">
+          Location
+        </h4>
+        <div class="overflow-hidden rounded-sm">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.6277957629377!2d12.765690845494943!3d46.831330092665745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47775df348db3f57%3A0x4a88b8a4964d6891!2sMocafe!5e0!3m2!1sen!2sid!4v1783940371800!5m2!1sen!2sid"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            class="rounded-sm border-0"></iframe>
+        </div>
+        <span class="text-foreground-muted-secondary text-sm">
+          Kärntner Str. 10, 9900 Lienz, Austria
+        </span>
+      </div>
+
+      <!-- Contacts -->
+      <div>
+        <h4 class="text-foreground-secondary text-sm font-semibold uppercase">
+          Contact
+        </h4>
+        <ul class="text-foreground-muted-secondary mt-4 space-y-2 text-sm">
+          {
+            [
+              {
+                name: "support@kopipy.com",
+                href: "mailto:sekondscognition@gmail.com",
+              },
+              {
+                name: "+62 851-7851-9376",
+                href: "https://api.whatsapp.com/send?phone=6285178519376",
+              },
+            ].map((item) => {
+              return (
+                <li>
+                  <a href={item.href} target="_blank" class="hover:text-brand">
+                    {item.name}
+                  </a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h4 class="text-foreground-secondary text-sm font-semibold uppercase">
+          Navigation
+        </h4>
+        <ul class="mt-4 space-y-2 text-sm">
+          {
+            ["About", "Featured", "Gallery", "Reviews"].map((item) => {
+              return (
+                <li>
+                  <a
+                    href="#about"
+                    class="hover:text-brand text-foreground-muted-secondary transition"
+                  >
+                    {item}
+                  </a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="border-foreground-secondary text-foreground-muted-secondary border-t pt-6 text-sm"
+    >
+      <p class="text-center">© This page is just a demo.</p>
+    </div>
+  </Container>
+</footer>
